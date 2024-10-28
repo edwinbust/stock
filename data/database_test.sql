@@ -10,9 +10,9 @@ INSERT INTO users (id, username, email, password, role, status, photo) VALUES ('
 INSERT INTO fund_operations (id, funde_inv, profit_funde, funde_porc_share, funde_now, timestamp, transactions) VALUES ('1', '1500', '0', '0', '1500', 'Fri Oct 25 10:46:07 -03 2024', '1');
 
 #TABLA fund_transactions
-INSERT INTO fund_transactions (id, user_id, inv_user, operation_id, profit_user, porc_share, share_now, is_latest) VALUES ('1', '1', '0', '1', '0', '0', '0', '1');
-INSERT INTO fund_transactions (id, user_id, inv_user, operation_id, profit_user, porc_share, share_now, is_latest) VALUES ('2', '2', '500', '1', '0', '33.33', '500', '1');
-INSERT INTO fund_transactions (id, user_id, inv_user, operation_id, profit_user, porc_share, share_now, is_latest) VALUES ('3', '3', '100', '1', '0', '6.67', '100', '1');
-INSERT INTO fund_transactions (id, user_id, inv_user, operation_id, profit_user, porc_share, share_now, is_latest) VALUES ('4', '4', '350', '1', '0', '23.33', '350', '1');
-INSERT INTO fund_transactions (id, user_id, inv_user, operation_id, profit_user, porc_share, share_now, is_latest) VALUES ('5', '5', '400', '1', '0', '26.67', '400', '1');
-INSERT INTO fund_transactions (id, user_id, inv_user, operation_id, profit_user, porc_share, share_now, is_latest) VALUES ('6', '6', '150', '1', '0', '10.00', '150', '1');
+INSERT INTO fund_transactions (id, user_id, inv_user, profit_user, porc_share, share_now, is_latest) VALUES ('1', '1', '0', '0', '0', '0', '1');
+INSERT INTO fund_transactions (id, user_id, inv_user, profit_user, porc_share, share_now, is_latest) VALUES ('2', '2', '500', '0', '33.33', '500', '1');
+INSERT INTO fund_transactions (id, user_id, inv_user, profit_user, porc_share, share_now, is_latest) VALUES ('3', '3', '100', '0', '6.67', '100', '1');
+INSERT INTO fund_transactions (id, user_id, inv_user, profit_user, porc_share, share_now, is_latest) VALUES ('4', '4', '350', '0', '23.33', '350', '1');
+INSERT INTO fund_transactions (id, user_id, inv_user, profit_user, porc_share, share_now, is_latest) VALUES ('5', '5', '400', '0', '26.67', '400', '1');
+INSERT INTO fund_transactions (id, user_id, inv_user, profit_user, porc_share, share_now, is_latest) VALUES ('6', '6', '150', '0', '10.00', '150', '1');
