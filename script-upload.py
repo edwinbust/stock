@@ -20,7 +20,7 @@ session = Session()
 def create_fund_operation(profit_funde):
     try:
         # Obtener usuarios activos
-        active_users = session.query(User).filter(User.status == 'True').all()
+        active_users = session.query(User).filter(User.status == '1').all()
 
         # Calcular funde_inv sumando inv_user de usuarios activos
         funde_inv = sum(user_transaction.inv_user for user in active_users for user_transaction in user.investments)
@@ -46,10 +46,10 @@ def create_fund_operation(profit_funde):
         for user in active_users:
             # Obtener última transacción del usuario y actualizar a no vigente
             last_transaction = session.query(FundTransaction).filter(
-                and_(FundTransaction.user_id == user.id, FundTransaction.is_latest == True)
+                and_(FundTransaction.user_id == user.id, FundTransaction.is_latest == 1)
             ).first()
             if last_transaction:
-                last_transaction.is_latest = False
+                last_transaction.is_latest = 0
             
             # Obtener inv_user y calcular porc_share
             inv_user = last_transaction.inv_user
@@ -67,7 +67,7 @@ def create_fund_operation(profit_funde):
                 profit_user=profit_user,
                 porc_share=porc_share,
                 share_now=share_now,
-                is_latest=True
+                is_latest=1
             )
             session.add(new_transaction)
         
