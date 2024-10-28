@@ -11,7 +11,7 @@ DB_USER = 'grace'
 DB_PASSWORD = 'gr4c1a!'
 DB_HOST = 'localhost'
 DB_NAME = 'cccp'
-DATABASE_URI = 'mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}'
+DATABASE_URI = 'mysql+pymysql://grace:gr4c1a!@localhost/cccp'
 
 engine = create_engine(DATABASE_URI)
 Session = sessionmaker(bind=engine)
