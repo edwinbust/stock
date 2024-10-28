@@ -12,7 +12,7 @@ class User(Base):
     email = Column(String(120), unique=True, nullable=False)
     password = Column(String(255), nullable=False)
     role = Column(String(20), nullable=False, default='user')  # 'user' o 'admin'
-    status = Column(Boolean, default=False)  # Indica si el usuario está activo
+    status = Column(TINYINT(1), default=0)  # TINYINT(1) en lugar de Boolean
     photo = Column(String(200))
 
     # Relación con transacciones de usuario
@@ -41,7 +41,7 @@ class FundTransaction(Base):
     profit_user = Column(Float, nullable=False)  # Ganancia del usuario en criptomoneda
     porc_share = Column(Float, nullable=False)  # Porcentaje de participación del usuario
     share_now = Column(Float, nullable=False)  # Saldo actual del usuario
-    is_latest = Column(Boolean, default=True)  # Marca si esta es la última transacción
+    is_latest = Column(TINYINT(1), default=1)
 
     # Relaciones con usuarios y operaciones
     user = relationship('User', back_populates='investments')
